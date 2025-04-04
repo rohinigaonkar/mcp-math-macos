@@ -1,0 +1,149 @@
+python mcp-client.py
+Starting main execution...
+Establishing connection to MCP server...
+Connection established, creating session...
+Session created, initializing...
+Requesting tool list...
+[04/03/25 21:21:07] INFO     Processing request of type ListToolsRequest                              server.py:534
+Successfully retrieved 22 tools
+Creating system prompt...
+Number of tools: 22
+1. add(a: integer, b: integer) - Add two numbers
+2. add_list(l: array) - Add all numbers in a list
+3. subtract(a: integer, b: integer) - Subtract two numbers
+4. multiply(a: integer, b: integer) - Multiply two numbers
+5. divide(a: integer, b: integer) - Divide two numbers
+6. power(a: integer, b: integer) - Power of two numbers
+7. sqrt(a: integer) - Square root of a number
+8. cbrt(a: integer) - Cube root of a number
+9. factorial(a: integer) - factorial of a number
+10. log(a: integer) - log of a number
+11. remainder(a: integer, b: integer) - remainder of two numbers divison
+12. sin(a: integer) - sin of a number
+13. cos(a: integer) - cos of a number
+14. tan(a: integer) - tan of a number
+15. mine(a: integer, b: integer) - special mining tool
+16. create_thumbnail(image_path: string) - Create a thumbnail from an image
+17. strings_to_chars_to_int(string: string) - Return the ASCII values of the characters in a word
+18. int_list_to_exponential_sum(int_list: array) - Return sum of exponentials of numbers in a list
+19. fibonacci_numbers(n: integer) - Return the first n Fibonacci Numbers
+20. mac_open_keynote() - Open Keynote on macOS and create a new document.
+21. mac_draw_rectangle() - Draw a rectangle in Keynote on macOS from (x1,y1) to (x2,y2).  Keynote must be open before calling this tool.
+22. mac_add_text_in_keynote(text: string) - Add text in Keynote on macOS inside a rectangle shape. Keynote must be open and rectangle must be drawn before calling this tool.
+Successfully created tools description
+Created system prompt...
+Starting iteration loop...
+
+--- Iteration 1 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FUNCTION_CALL: strings_to_chars_to_int|INDIA
+
+DEBUG: Raw function info:  strings_to_chars_to_int|INDIA
+DEBUG: Split parts: ['strings_to_chars_to_int', 'INDIA']
+DEBUG: Function name: strings_to_chars_to_int
+DEBUG: Raw parameters: ['INDIA']
+DEBUG: Found tool: strings_to_chars_to_int
+DEBUG: Tool schema: {'properties': {'string': {'title': 'String', 'type': 'string'}}, 'required': ['string'], 'title': 'strings_to_chars_to_intArguments', 'type': 'object'}
+DEBUG: Schema properties: {'string': {'title': 'String', 'type': 'string'}}
+DEBUG: Converting parameter string with value INDIA to type string
+DEBUG: Final arguments: {'string': 'INDIA'}
+DEBUG: Calling tool strings_to_chars_to_int
+                    INFO     Processing request of type CallToolRequest                               server.py:534
+DEBUG: Raw result: meta=None content=[TextContent(type='text', text='73', annotations=None), TextContent(type='text', text='78', annotations=None), TextContent(type='text', text='68', annotations=None), TextContent(type='text', text='73', annotations=None), TextContent(type='text', text='65', annotations=None)] isError=False
+DEBUG: Result has content attribute
+DEBUG: Final iteration result: ['73', '78', '68', '73', '65']
+Iteration_result: ['73', '78', '68', '73', '65']
+
+--- Iteration 2 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FUNCTION_CALL: int_list_to_exponential_sum|[73, 78, 68, 73, 65]
+
+DEBUG: Raw function info:  int_list_to_exponential_sum|[73, 78, 68, 73, 65]
+DEBUG: Split parts: ['int_list_to_exponential_sum', '[73, 78, 68, 73, 65]']
+DEBUG: Function name: int_list_to_exponential_sum
+DEBUG: Raw parameters: ['[73, 78, 68, 73, 65]']
+DEBUG: Found tool: int_list_to_exponential_sum
+DEBUG: Tool schema: {'properties': {'int_list': {'items': {}, 'title': 'Int List', 'type': 'array'}}, 'required': ['int_list'], 'title': 'int_list_to_exponential_sumArguments', 'type': 'object'}
+DEBUG: Schema properties: {'int_list': {'items': {}, 'title': 'Int List', 'type': 'array'}}
+DEBUG: Converting parameter int_list with value [73, 78, 68, 73, 65] to type array
+DEBUG: Final arguments: {'int_list': [73, 78, 68, 73, 65]}
+DEBUG: Calling tool int_list_to_exponential_sum
+[04/03/25 21:21:08] INFO     Processing request of type CallToolRequest                               server.py:534
+DEBUG: Raw result: meta=None content=[TextContent(type='text', text='7.59982224609308e+33', annotations=None)] isError=False
+DEBUG: Result has content attribute
+DEBUG: Final iteration result: ['7.59982224609308e+33']
+Iteration_result: ['7.59982224609308e+33']
+
+--- Iteration 3 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FUNCTION_CALL: mac_open_keynote
+
+DEBUG: Raw function info:  mac_open_keynote
+DEBUG: Split parts: ['mac_open_keynote']
+DEBUG: Function name: mac_open_keynote
+DEBUG: Raw parameters: []
+DEBUG: Found tool: mac_open_keynote
+DEBUG: Tool schema: {'properties': {}, 'title': 'mac_open_keynoteArguments', 'type': 'object'}
+DEBUG: Schema properties: {}
+DEBUG: Final arguments: {}
+DEBUG: Calling tool mac_open_keynote
+                    INFO     Processing request of type CallToolRequest                               server.py:534
+DEBUG: Raw result: meta=None content=[TextContent(type='text', text='{"content": [{"type": "text", "text": "Keynote opened successfully with a new document"}]}', annotations=None)] isError=False
+DEBUG: Result has content attribute
+DEBUG: Final iteration result: ['{"content": [{"type": "text", "text": "Keynote opened successfully with a new document"}]}']
+Iteration_result: ['{"content": [{"type": "text", "text": "Keynote opened successfully with a new document"}]}']
+
+--- Iteration 4 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FUNCTION_CALL: mac_draw_rectangle
+
+DEBUG: Raw function info:  mac_draw_rectangle
+DEBUG: Split parts: ['mac_draw_rectangle']
+DEBUG: Function name: mac_draw_rectangle
+DEBUG: Raw parameters: []
+DEBUG: Found tool: mac_draw_rectangle
+DEBUG: Tool schema: {'properties': {}, 'title': 'mac_draw_rectangleArguments', 'type': 'object'}
+DEBUG: Schema properties: {}
+DEBUG: Final arguments: {}
+DEBUG: Calling tool mac_draw_rectangle
+[04/03/25 21:21:13] INFO     Processing request of type CallToolRequest                               server.py:534
+DEBUG: Raw result: meta=None content=[TextContent(type='text', text='{"content": [{"type": "text", "text": "Rectangle drawn in Keynote from (780,380) to (1140,700)", "annotations": null}]}', annotations=None)] isError=False
+DEBUG: Result has content attribute
+DEBUG: Final iteration result: ['{"content": [{"type": "text", "text": "Rectangle drawn in Keynote from (780,380) to (1140,700)", "annotations": null}]}']
+Iteration_result: ['{"content": [{"type": "text", "text": "Rectangle drawn in Keynote from (780,380) to (1140,700)", "annotations": null}]}']
+
+--- Iteration 5 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FUNCTION_CALL: mac_add_text_in_keynote|7.59982224609308e+33
+
+DEBUG: Raw function info:  mac_add_text_in_keynote|7.59982224609308e+33
+DEBUG: Split parts: ['mac_add_text_in_keynote', '7.59982224609308e+33']
+DEBUG: Function name: mac_add_text_in_keynote
+DEBUG: Raw parameters: ['7.59982224609308e+33']
+DEBUG: Found tool: mac_add_text_in_keynote
+DEBUG: Tool schema: {'properties': {'text': {'title': 'Text', 'type': 'string'}}, 'required': ['text'], 'title': 'mac_add_text_in_keynoteArguments', 'type': 'object'}
+DEBUG: Schema properties: {'text': {'title': 'Text', 'type': 'string'}}
+DEBUG: Converting parameter text with value 7.59982224609308e+33 to type string
+DEBUG: Final arguments: {'text': '7.59982224609308e+33'}
+DEBUG: Calling tool mac_add_text_in_keynote
+[04/03/25 21:21:15] INFO     Processing request of type CallToolRequest                               server.py:534
+DEBUG: Raw result: meta=None content=[TextContent(type='text', text='{"content": [{"type": "text", "text": "Text \'7.59982224609308e+33\' added successfully to Keynote", "annotations": null}]}', annotations=None)] isError=False
+DEBUG: Result has content attribute
+DEBUG: Final iteration result: ['{"content": [{"type": "text", "text": "Text \'7.59982224609308e+33\' added successfully to Keynote", "annotations": null}]}']
+Iteration_result: ['{"content": [{"type": "text", "text": "Text \'7.59982224609308e+33\' added successfully to Keynote", "annotations": null}]}']
+
+--- Iteration 6 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FINAL_ANSWER: [7.59982224609308e+33]
